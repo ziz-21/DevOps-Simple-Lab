@@ -1,13 +1,15 @@
 name: Unit Test Pipeline
-[cite_start]on: [push] # يشتغل تلقائياً عند كل عملية رفع [cite: 29]
+on: [push]
 jobs:
   build:
-    [cite_start]runs-on: ubuntu-latest [cite: 32]
+    runs-on: ubuntu-latest
     steps:
-      - [cite_start]uses: actions/checkout@v3 [cite: 34]
+      - uses: actions/checkout@v3
       - name: Set up Python
-        [cite_start]uses: actions/setup-python@v4 [cite: 35, 36]
+        uses: actions/setup-python@v4
         with:
-          [cite_start]python-version: '3.9' [cite: 38]
+          python-version: '3.9'
       - name: Run Unit Tests
-        [cite_start]run: python test_calculator.py [cite: 40]
+        run: |
+          ls -R
+          python test_calculator.py
